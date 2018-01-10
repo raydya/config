@@ -321,34 +321,17 @@ layers configuration.
 This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
-  ;; use apsell as ispell backend
-  (setq-default ispell-program-name "aspell")
-  ;; use American English as ispell default dictionary
-  (ispell-change-dictionary "american" t)
-  (setq ns-use-srgb-colorspace nil)
-  (setq powerline-default-separator 'utf-8)
-    ;; Solve problem of hanging on startup
-  (setq tramp-ssh-controlmaster-options
-        "-o ControlMaster=auto -o ControlPath='tramp.%%C' -o ControlPersist=no")
   ;; (setq configuration-layer-elpa-archives
   ;;       '(("melpa-cn" . "http://elpa.emacs-china.org/melpa/")
   ;;         ("org-cn"   . "http://elpa.emacs-china.org/org/")
   ;;         ("gnu-cn"   . "http://elpa.emacs-china.org/gnu/")))
-  (setq configuration-layer-elpa-archives '(("melpa" . "melpa.org/packages/")
-                                            ("org" . "orgmode.org/elpa/") ("gnu" . "elpa.gnu.org/packages/")))
-
-  (setenv "INSIDE_EMACS" "true")
-  ;; Shell bug fix
-  (add-hook 'term-mode-hook (lambda () (toggle-truncate-lines) (make-local-variable 'transient-mark-mode) (setq transient-mark-mode nil)))
-
-  ;; ensime
-  (push '("melpa-stable" . "stable.melpa.org/packages/") configuration-layer-elpa-archives)
-  (push '("ensime" . "melpa-stable") package-pinned-packages)
-
-  ;; Speed up launch
-  (setq-default exec-path-from-shell-check-startup-files nil)
-
   ;; dumb-jump
+
+  ;; use apsell as ispell backend
+  (setq-default ispell-program-name "aspell")
+  ;; use American English as ispell default dictionary
+  (ispell-change-dictionary "american" t)
+
   (setq dumb-jump-mode t)
   (use-package dumb-jump
     :bind (("M-g o" . dumb-jump-go-other-window)
