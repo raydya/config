@@ -1,1 +1,1 @@
-# emac_config
+# emacs config
