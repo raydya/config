@@ -58,6 +58,8 @@ plugins=(git)
 # export PATH="/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
 # export MANPATH="/usr/local/man:$MANPATH"
 
+DEFAULT_USER=`whoami`
+POWERLEVEL9K_ALWAYS_SHOW_USER=true
 source $ZSH/oh-my-zsh.sh
 
 # You may need to manually set your language environment
